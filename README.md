@@ -3,9 +3,9 @@
   <h1>PhotoFOSS</h1>
   <p><strong>Professional Photo Editor — Free & Open Source</strong></p>
 
-  [![GitHub Stars](https://img.shields.io/github/stars/vsingh66388-oss/PhotoFOSS?style=for-the-badge&logo=github&color=gold)](https://github.com/vsingh66388-oss/PhotoFOSS/stargazers)
-  [![GitHub Forks](https://img.shields.io/github/forks/vsingh66388-oss/PhotoFOSS?style=for-the-badge&logo=github&color=blue)](https://github.com/vsingh66388-oss/PhotoFOSS/forks)
-  [![GitHub License](https://img.shields.io/github/license/vsingh66388-oss/PhotoFOSS?style=for-the-badge&color=green)](https://github.com/vsingh66388-oss/PhotoFOSS/blob/main/LICENSE)
+  [![GitHub Stars](https://img.shields.io/github/stars/flyingPenguinW/PhotoFOSS?style=for-the-badge&logo=github&color=gold)](https://github.com/flyingPenguinW/PhotoFOSS/stargazers)
+  [![GitHub Forks](https://img.shields.io/github/forks/flyingPenguinW/PhotoFOSS?style=for-the-badge&logo=github&color=blue)](https://github.com/flyingPenguinW/PhotoFOSS/forks)
+  [![GitHub License](https://img.shields.io/github/license/flyingPenguinW/PhotoFOSS?style=for-the-badge&color=green)](https://github.com/flyingPenguinW/PhotoFOSS/blob/main/LICENSE)
   [![Buy Me a Coffee](https://img.shields.io/badge/☕%20Donate-Buy%20Me%20a%20Coffee-ff69b4?style=for-the-badge)](https://buymeacoffee.com/ailieisqueen)
 
 </div>
@@ -37,7 +37,7 @@ Ensure you have [Node.js](https://nodejs.org/) (v18+) installed.
 
 ```bash
 # Clone the repository
-git clone https://github.com/vsingh66388-oss/PhotoFOSS.git
+git clone https://github.com/flyingPenguinW/PhotoFOSS.git
 cd PhotoFOSS
 
 # Install dependencies

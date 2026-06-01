@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const REPO_OWNER = 'vsingh66388-oss';
+const REPO_OWNER = 'flyingPenguinW';
 const REPO_NAME = 'PhotoFOSS';
 const DONATE_URL = 'https://buymeacoffee.com/ailieisqueen';
 const RESET = '\x1b[0m';
