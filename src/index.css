@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg-app: #050505;
+  --color-bg-panel: #0d0d0d;
+  --color-bg-panel-alt: #131313;
+  --color-bg-surface: #1a1a1a;
+  --color-bg-hover: #242424;
+  --color-bg-active: #2d2d2d;
+  --color-border-subtle: #141414;
+  --color-border-default: #222222;
+  --color-border-hover: #363636;
+  --color-accent-blue: #ffffff;
+  --color-accent-purple: #e5e5e5;
+  --color-accent-pink: #a3a3a3;
+  --color-accent-green: #34d399;
+  --color-accent-orange: #737373;
+  --color-accent-gradient-start: #ffffff;
+  --color-accent-gradient-mid: #d4d4d4;
+  --color-accent-gradient-end: #525252;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-text-dim: #404040;
+  --color-danger: #fc3d3d;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #363636;
+}
+
+/* Workspace grid */
+.workspace-grid {
+  background-color: #020202;
+  background-image: radial-gradient(#161616 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Tool flyout animation */
+@keyframes flyout-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-4px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+.flyout-animate {
+  animation: flyout-enter 0.15s ease-out;
+}
+
+/* Dropdown menu animation */
+@keyframes dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dropdown-animate {
+  animation: dropdown-enter 0.12s ease-out;
+}
+
+/* Fade in */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+/* Marching ants for selection */
+@keyframes marching-ants {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -16; }
+}
+.marching-ants {
+  stroke-dasharray: 8 4;
+  animation: marching-ants 0.4s linear infinite;
+}
+
+/* Pulse glow */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 0 16px 4px rgba(255, 255, 255, 0.25); }
+}
+.glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.text-gradient-brand {
+  background: linear-gradient(135deg, #ffffff 30%, #a3a3a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Panel glass effect */
+.panel-glass {
+  background: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px -4px rgba(0, 0, 0, 0.85), inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Minimap styles */
+.minimap-viewport {
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: move;
+}
+
+/* Range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #222222;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 2px solid #080808;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  transition: transform 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  background: #cccccc;
+}
+
+/* Smooth transitions for panels */
+.panel-transition {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Checkerboard for transparent backgrounds */
+.checkerboard {
+  background-image:
+    linear-gradient(45deg, #090909 25%, transparent 25%),
+    linear-gradient(-45deg, #090909 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #090909 75%),
+    linear-gradient(-45deg, transparent 75%, #090909 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-color: #121212;
+}
+
+/* Button hover shine effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  transition: left 0.4s;
+}
+.btn-shine:hover::after {
+  left: 100%;
+}
+
+/* Active tool indicator */
+.tool-active-indicator {
+  position: relative;
+}
+.tool-active-indicator::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 60%;
+  background: #ffffff;
+  border-radius: 1px;
+}
+
+/* Context menu glass effect */
+.context-menu-glass {
+  background: rgba(18, 18, 22, 0.92);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px -8px rgba(0, 0, 0, 0.8),
+    0 8px 24px -4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Context menu entrance animation */
+@keyframes context-menu-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.context-menu-animate {
+  animation: context-menu-enter 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top left;
+}
+
+/* Color grading tint swatch */
+.color-grading-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  position: relative;
+}
+.color-grading-swatch:hover {
+  transform: scale(1.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 12px var(--swatch-color, rgba(255,255,255,0.2));
+}
+.color-grading-swatch.active {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 16px var(--swatch-color, rgba(255,255,255,0.3));
+}
+
+/* Tone curve preview */
+.tone-curve-btn {
+  position: relative;
+  overflow: hidden;
+}
+.tone-curve-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.04) 100%);
+  pointer-events: none;
+}
+
+/* Color grading section gradient header */
+.color-grade-header {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.05) 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Global body font override */
+body, button, select, input, textarea {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace !important;
+}
+
+/* Grid overlay styling */
+.editor-grid-overlay {
+  pointer-events: none;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Ruler tick styling */
+.ruler-tick {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 1px;
+}
+.ruler-text {
+  fill: #737373;
+  font-size: 8px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Quick Mask red translucent overlay */
+.quick-mask-overlay {
+  background: rgba(239, 68, 68, 0.35); /* Tailwind red-500 with opacity */
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+
